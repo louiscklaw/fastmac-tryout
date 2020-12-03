@@ -18,10 +18,10 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # - name: source script-mac.sh
-    #   shell: bash
-    #   run: |
-    #     git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
+    - name: source script-mac.sh
+      shell: bash
+      run: |
+        git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
     - name: keys
       shell: bash
       run: |
