@@ -40,13 +40,13 @@ runs:
             TCPKeepAlive yes
             IdentitiesOnly yes
         EOF
-    # - name: source script-mac.sh
-    #   shell: bash
-    #   run: |
-    #     cd ${{ inputs.wk_dir }}/ssh
-    #       chmod +x ./script-mac.sh
-    #       source script-mac.sh
-    #     cd -
+    - name: source script-mac.sh
+      shell: bash
+      run: |
+        cd ${{ inputs.wk_dir }}/ssh
+          chmod +x ./script-mac.sh
+          source script-mac.sh
+        cd -
 
     # - name: hostname
     #   shell: bash
