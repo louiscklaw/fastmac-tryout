@@ -3,10 +3,12 @@ description: 'setup fastmac session'
 
 inputs:
   ssh_key:
+    description: 'private key'
     required: true
-
   key_file:
-    required: true
+    description: 'ssh key file name'
+    default: 'id_rsa'
+    required: false
 
 runs:
   using: "composite"
