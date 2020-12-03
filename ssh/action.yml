@@ -13,8 +13,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: hostname
-      shell: bash
     - name: keys
       shell: bash
       run: |
