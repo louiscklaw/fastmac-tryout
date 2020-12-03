@@ -41,5 +41,5 @@ runs:
       shell: bash
       run: |
         hostname
-        brew install node
+        brew install node12
         node -v
