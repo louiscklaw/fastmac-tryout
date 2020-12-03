@@ -42,6 +42,5 @@ runs:
       run: |
         hostname
 
-runs:
   using: 'node12'
   main: 'node -v'
