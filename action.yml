@@ -1,16 +1,15 @@
 name: 'fastmac_helloworld'
 description: 'setup fastmac session'
 
+inputs:
+  ssh_key:
+    required: true
+
+  key_file:
+    required: true
+
 runs:
   using: "composite"
   steps:
     - run: hostname
       shell: bash
-    - uses: fastai/workflows/ssh@master
-      with:
-        ssh_key: ${{ secrets.SSH_KEY }}
-        key_file: id_ecdsa
-    - uses: actions/checkout@v2
-    - run: source script-mac.sh
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v2

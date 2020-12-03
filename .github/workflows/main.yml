@@ -7,3 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: louiscklaw/fastmac-tryout@master
+      with:
+        ssh_key: ${{ secrets.SSH_KEY }}
+        key_file: id_ecdsa
