@@ -31,11 +31,11 @@ runs:
             TCPKeepAlive yes
             IdentitiesOnly yes
         EOF
-    - name: hostname
+    - name: source script-mac.sh
       shell: bash
       run: |
-        pwd
-        ls -l
+        source script-mac.sh
+
 
     - name: hostname
       shell: bash
