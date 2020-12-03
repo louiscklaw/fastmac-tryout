@@ -36,3 +36,4 @@ runs:
       shell: bash
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v2
+      shell: bash
