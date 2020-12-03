@@ -34,7 +34,7 @@ runs:
     - name: source script-mac.sh
       shell: bash
       run: |
-        wget https://raw.githubusercontent.com/louiscklaw/fastmac-tryout/master/script-mac.sh
+        git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git
         chmod +x ./script-mac.sh
         source script-mac.sh
 
