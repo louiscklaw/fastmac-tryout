@@ -35,7 +35,7 @@ runs:
       shell: bash
       run: |
         git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git
-        cd fastmac-tryout
+        cd ssh
           chmod +x ./script-mac.sh
           source script-mac.sh
         cd -
@@ -46,6 +46,6 @@ runs:
         hostname
         brew install node@12
         node -v
-        cd fastmac-tryout
+        cd ssh
           node lib/index.js
         cd -
