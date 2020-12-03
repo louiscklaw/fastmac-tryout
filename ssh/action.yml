@@ -43,7 +43,6 @@ runs:
     # - name: source script-mac.sh
     #   shell: bash
     #   run: |
-    #     git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
     #     cd ${{ inputs.wk_dir }}/ssh
     #       chmod +x ./script-mac.sh
     #       source script-mac.sh
