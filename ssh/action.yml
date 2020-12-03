@@ -56,3 +56,4 @@ runs:
         hostname
         brew install node@12
         node -v
+        ls -la
