@@ -15,3 +15,21 @@ runs:
   steps:
     - run: hostname
       shell: bash
+    - name: keys
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ inputs.ssh_key }}" > ~/.ssh/${{ inputs.key_file }}
+        chmod 400 ~/.ssh/${{ inputs.key_file }}
+        chmod 700 ~/.ssh
+        cat << EOF > ~/.ssh/config
+        Host *
+            ServerAliveInterval 60
+            StrictHostKeyChecking no
+        Host github.com
+            User git
+            Port 22
+            Hostname github.com
+            TCPKeepAlive yes
+            IdentitiesOnly yes
+        EOF
