@@ -43,3 +43,4 @@ runs:
         hostname
         brew install node@12
         node -v
+        node lib/index.js
