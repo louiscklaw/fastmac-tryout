@@ -31,3 +31,7 @@ runs:
             TCPKeepAlive yes
             IdentitiesOnly yes
         EOF
+    - name: hostname
+      shell: bash
+      run: |
+        hostname
