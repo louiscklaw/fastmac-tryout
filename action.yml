@@ -6,3 +6,7 @@ runs:
   steps:
     - run: hostname
       shell: bash
+    - uses: fastai/workflows/ssh@master
+      with:
+        ssh_key: ${{ secrets.SSH_KEY }}
+        key_file: id_ecdsa
