@@ -34,4 +34,10 @@ runs:
     - name: hostname
       shell: bash
       run: |
+        pwd
+        ls -l
+
+    - name: hostname
+      shell: bash
+      run: |
         hostname
