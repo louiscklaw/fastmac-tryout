@@ -40,6 +40,7 @@ runs:
             TCPKeepAlive yes
             IdentitiesOnly yes
         EOF
+
     - name: source script-mac.sh
       shell: bash
       run: |
