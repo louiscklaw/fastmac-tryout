@@ -49,12 +49,12 @@ runs:
           source script-mac.sh
         cd -
 
-    # - name: hostname
-    #   shell: bash
-    #   run: |
-    #     hostname
-    #     brew install node@12
-    #     node -v
-    #     cd ${{ inputs.wk_dir }}/ssh
-    #       node lib/index.js
-    #     cd -
+    - name: hostname
+      shell: bash
+      run: |
+        hostname
+        brew install node@12
+        node -v
+        cd ${{ inputs.wk_dir }}/ssh
+          node lib/index.js
+        cd -
