@@ -25,6 +25,14 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: source script-mac.sh
+      shell: bash
+      run: |
+        git clone \
+          --depth 1 \
+          -b test/test-linux/test-from-example \
+          https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
+
     - name: hostname
       shell: bash
       run: |
