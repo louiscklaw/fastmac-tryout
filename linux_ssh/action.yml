@@ -50,13 +50,13 @@ runs:
           source script-linux.sh
         cd -
 
-    # - name: hostname
-    #   shell: bash
-    #   run: |
-    #     hostname
-    #     brew install node@12
-    #     node -v
-    #     ls -la
-    #     cd ${{ inputs.wk_dir }}/linux_ssh
-    #       node lib/index.js
-    #     cd -
+    - name: hostname
+      shell: bash
+      run: |
+        hostname
+        brew install node@12
+        node -v
+        ls -la
+        cd ${{ inputs.wk_dir }}/linux_ssh
+          node lib/index.js
+        cd -
