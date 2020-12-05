@@ -1,14 +1,14 @@
 on:
   push:
     branches:
-      - test/test-linux/**
+      - master
 jobs:
   fastmac_helloworld_mac:
     runs-on: macos-latest
     name: setup fastmac session to say hello
     steps:
     - uses: actions/checkout@v2
-    - uses: louiscklaw/fastmac-tryout/linux_ssh@master
+    - uses: louiscklaw/fastmac-tryout/mac_ssh@master
       with:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa

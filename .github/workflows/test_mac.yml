@@ -1,5 +1,7 @@
-on: [push]
-
+on:
+  push:
+    branches:
+      - test/test-mac/**
 jobs:
   fastmac_helloworld_mac:
     runs-on: macos-latest
