@@ -42,13 +42,13 @@ runs:
             IdentitiesOnly yes
         EOF
 
-    # - name: source script-linux.sh
-    #   shell: bash
-    #   run: |
-    #     cd ${{ inputs.wk_dir }}/linux_ssh
-    #       chmod +x ./script-linux.sh
-    #       source script-linux.sh
-    #     cd -
+    - name: source script-linux.sh
+      shell: bash
+      run: |
+        cd ${{ inputs.wk_dir }}/linux_ssh
+          chmod +x ./script-linux.sh
+          source script-linux.sh
+        cd -
 
     # - name: hostname
     #   shell: bash
