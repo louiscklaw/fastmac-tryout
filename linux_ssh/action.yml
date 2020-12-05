@@ -2,6 +2,10 @@ name: 'fastmac_helloworld'
 description: 'setup fastmac session'
 
 inputs:
+  sudo:
+    description: 'If apt should be executed with sudo or without'
+    required: false
+    default: 'true'
   ssh_key:
     description: 'private key'
     required: true
