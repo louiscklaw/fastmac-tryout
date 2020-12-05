@@ -42,12 +42,12 @@ runs:
             IdentitiesOnly yes
         EOF
 
-    - name: source script-mac.sh
+    - name: source script-linux.sh
       shell: bash
       run: |
         cd ${{ inputs.wk_dir }}/linux_ssh
-          chmod +x ./script-mac.sh
-          source script-mac.sh
+          chmod +x ./script-linux.sh
+          source script-linux.sh
         cd -
 
     - name: hostname
