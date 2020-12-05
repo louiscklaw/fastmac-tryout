@@ -12,5 +12,4 @@ jobs:
         key_file: id_ecdsa
     - uses: actions/checkout@v2
     - run: source script-linux.sh
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@master
+    - uses: fastmac-tryout/linux_ssh@master
