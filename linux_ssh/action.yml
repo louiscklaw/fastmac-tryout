@@ -21,7 +21,7 @@ runs:
     - name: source script-linux.sh
       shell: bash
       run: |
-        git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
+        git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }} -b test/test-linux/helloworld
 
     - name: keys
       shell: bash
