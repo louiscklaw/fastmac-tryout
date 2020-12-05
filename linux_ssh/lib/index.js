@@ -472,6 +472,15 @@ async function run() {
     }
     console.log("Installed dependencies successfully");
 
+    if (process.platform !== "win32") {
+        core.debug("Generating SSH keys")
+        external_fs_default().mkdirSync(external_path_default().join(external_os_default().homedir(), ".ssh"), { recursive: true })
+        try {
+          await execShellCommand(`echo -e 'y\n'|ssh-keygen -q -t rsa -N "" -f ~/.ssh/id_rsa`);
+        } catch { }
+        core.debug("Generated SSH-Key successfully")
+      }
+
 
 
 
