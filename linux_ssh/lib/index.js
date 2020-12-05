@@ -470,7 +470,7 @@ async function run() {
       await execShellCommand(optionalSudoPrefix + 'apt-get update');
       await execShellCommand(optionalSudoPrefix + 'apt-get install -y tmate openssh-client');
     }
-    core.debug("Installed dependencies successfully");
+    console.log("Installed dependencies successfully");
 
 
 
