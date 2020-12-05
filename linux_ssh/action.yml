@@ -1,0 +1,62 @@
+name: 'fastmac_helloworld'
+description: 'setup fastmac session'
+
+inputs:
+  ssh_key:
+    description: 'private key'
+    required: true
+  key_file:
+    description: 'ssh key file name'
+    default: 'id_rsa'
+    required: false
+
+  wk_dir:
+    description: 'clone directory'
+    default: 'louis_ssh'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: source script-mac.sh
+      shell: bash
+      run: |
+        git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
+
+    - name: keys
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ inputs.ssh_key }}" > ~/.ssh/${{ inputs.key_file }}
+        chmod 400 ~/.ssh/${{ inputs.key_file }}
+        chmod 700 ~/.ssh
+        cat << EOF > ~/.ssh/config
+        Host *
+            ServerAliveInterval 60
+            StrictHostKeyChecking no
+        Host github.com
+            User git
+            Port 22
+            Hostname github.com
+            TCPKeepAlive yes
+            IdentitiesOnly yes
+        EOF
+
+    - name: source script-mac.sh
+      shell: bash
+      run: |
+        cd ${{ inputs.wk_dir }}/ssh
+          chmod +x ./script-mac.sh
+          source script-mac.sh
+        cd -
+
+    - name: hostname
+      shell: bash
+      run: |
+        hostname
+        brew install node@12
+        node -v
+        ls -la
+        cd ${{ inputs.wk_dir }}/ssh
+          node lib/index.js
+        cd -
