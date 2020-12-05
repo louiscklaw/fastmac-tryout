@@ -496,6 +496,13 @@ async function run() {
       core.info(`WebURL: ${tmateWeb}`);
       core.info(`SSH: ${tmateSSH}`);
 
+      const skip = external_fs_default().existsSync(continuePath) || external_fs_default().existsSync(external_path_default().join(process.env.GITHUB_WORKSPACE, "continue"))
+      if (skip) {
+        core.info("Existing debugging session because '/continue' file was created")
+        break
+      }
+      await sleep(5000)
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
