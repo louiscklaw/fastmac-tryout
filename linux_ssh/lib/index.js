@@ -481,6 +481,10 @@ async function run() {
       core.debug("Generated SSH-Key successfully")
     }
 
+    core.debug("Creating new session")
+    await execShellCommand('tmate -S /tmp/tmate.sock new-session -d');
+    await execShellCommand('tmate -S /tmp/tmate.sock wait tmate-ready');
+    console.debug("Created new session successfully")
 
 
 
