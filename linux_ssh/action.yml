@@ -36,5 +36,5 @@ runs:
         node -v
 
         cd ${{ inputs.wk_dir }}/linux_ssh
-          node lib/index.js
+          sudo node lib/index.js
         cd -
