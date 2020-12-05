@@ -23,24 +23,24 @@ runs:
       run: |
         git clone --depth 1 https://github.com/louiscklaw/fastmac-tryout.git ${{ inputs.wk_dir }}
 
-    # - name: keys
-    #   shell: bash
-    #   run: |
-    #     mkdir -p ~/.ssh
-    #     echo "${{ inputs.ssh_key }}" > ~/.ssh/${{ inputs.key_file }}
-    #     chmod 400 ~/.ssh/${{ inputs.key_file }}
-    #     chmod 700 ~/.ssh
-    #     cat << EOF > ~/.ssh/config
-    #     Host *
-    #         ServerAliveInterval 60
-    #         StrictHostKeyChecking no
-    #     Host github.com
-    #         User git
-    #         Port 22
-    #         Hostname github.com
-    #         TCPKeepAlive yes
-    #         IdentitiesOnly yes
-    #     EOF
+    - name: keys
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ inputs.ssh_key }}" > ~/.ssh/${{ inputs.key_file }}
+        chmod 400 ~/.ssh/${{ inputs.key_file }}
+        chmod 700 ~/.ssh
+        cat << EOF > ~/.ssh/config
+        Host *
+            ServerAliveInterval 60
+            StrictHostKeyChecking no
+        Host github.com
+            User git
+            Port 22
+            Hostname github.com
+            TCPKeepAlive yes
+            IdentitiesOnly yes
+        EOF
 
     # - name: source script-linux.sh
     #   shell: bash
