@@ -490,6 +490,11 @@ async function run() {
     const tmateSSH = await execShellCommand(`tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'`);
     const tmateWeb = await execShellCommand(`tmate -S /tmp/tmate.sock display -p '#{tmate_web}'`);
 
+    console.debug("Entering main loop")
+    const continuePath = process.platform !== "win32" ? "/continue" : "C:/msys64/continue"
+    while (true) {
+      core.info(`WebURL: ${tmateWeb}`);
+      core.info(`SSH: ${tmateSSH}`);
 
   } catch (error) {
     core.setFailed(error.message);
