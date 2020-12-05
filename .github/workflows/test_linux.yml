@@ -4,7 +4,7 @@ on:
       - test/test-linux/**
 jobs:
   fastmac_helloworld_mac:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     name: setup fastmac session to say hello
     steps:
     - uses: actions/checkout@v2
