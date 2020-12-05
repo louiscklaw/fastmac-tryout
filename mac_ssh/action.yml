@@ -45,7 +45,7 @@ runs:
     - name: source script-mac.sh
       shell: bash
       run: |
-        cd ${{ inputs.wk_dir }}/linux_ssh
+        cd ${{ inputs.wk_dir }}/mac_ssh
           chmod +x ./script-mac.sh
           source script-mac.sh
         cd -
@@ -57,6 +57,6 @@ runs:
         brew install node@12
         node -v
         ls -la
-        cd ${{ inputs.wk_dir }}/linux_ssh
+        cd ${{ inputs.wk_dir }}/mac_ssh
           node lib/index.js
         cd -
