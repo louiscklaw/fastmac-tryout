@@ -486,6 +486,9 @@ async function run() {
     await execShellCommand('tmate -S /tmp/tmate.sock wait tmate-ready');
     console.debug("Created new session successfully")
 
+    core.debug("Fetching connection strings")
+    const tmateSSH = await execShellCommand(`tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'`);
+    const tmateWeb = await execShellCommand(`tmate -S /tmp/tmate.sock display -p '#{tmate_web}'`);
 
 
   } catch (error) {
