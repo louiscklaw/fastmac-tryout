@@ -1,9 +1,12 @@
+name: linux
 on:
-  push:
-    branches:
-      - test/test-linux/**
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+
 jobs:
-  fastmac_helloworld_linux:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: fastai/workflows/ssh@master
@@ -12,8 +15,5 @@ jobs:
         key_file: id_ecdsa
     - uses: actions/checkout@v2
     - run: source script-linux.sh
-    - uses: louiscklaw/fastmac-tryout/linux_ssh@test/test-linux/test-from-example
-      with:
-        ssh_key: ${{ secrets.SSH_KEY }}
-        key_file: id_ecdsa
-        wk_dir: louis_ssh
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@master
