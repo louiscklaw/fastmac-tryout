@@ -12,4 +12,4 @@ jobs:
         key_file: id_ecdsa
     - uses: actions/checkout@v2
     - run: source script-linux.sh
-    - uses: fastmac-tryout/linux_ssh@master
+    - uses: fastmac-tryout/linux_ssh@test/test-linux/test-from-example
