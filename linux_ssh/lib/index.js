@@ -459,7 +459,7 @@ const execShellCommand = (cmd) => {
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function run() {
-  const optionalSudoPrefix = core.getInput('sudo') === "true" ? "sudo " : "";
+  const optionalSudoPrefix = "sudo "
   try {
     core.debug("Installing dependencies")
     if (process.platform === "darwin") {
