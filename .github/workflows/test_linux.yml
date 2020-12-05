@@ -5,11 +5,12 @@ on:
 jobs:
   fastmac_helloworld_linux:
     runs-on: ubuntu-latest
-    name: setup fastmac(linux) session to say hello
     steps:
-    - uses: actions/checkout@v2
-    - uses: louiscklaw/fastmac-tryout/linux_ssh@test/test-linux/helloworld
+    - uses: fastai/workflows/ssh@master
       with:
         ssh_key: ${{ secrets.SSH_KEY }}
         key_file: id_ecdsa
-        wk_dir: louis_ssh
+    - uses: actions/checkout@v2
+    - run: source script-linux.sh
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@master
